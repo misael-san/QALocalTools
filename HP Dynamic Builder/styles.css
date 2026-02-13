@@ -1,0 +1,211 @@
+/* Reset default styles and set box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+/* Main container styles */
+main {
+    width: 100%;
+    padding: 0 1em;
+}
+
+/* Banner container styles */
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+}
+
+/* Position input styles */
+.position-input {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.position-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.position-input input {
+    width: 100%;
+    padding: 1em;
+    border: 2px solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    overflow-y: auto;
+    min-height: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    resize: vertical;
+}
+
+.position-input input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.position-input input:placeholder-shown {
+    text-align: center;
+}
+
+/* Specific layout and proportions */
+.position-input[data-position="1"] {
+    min-height: 150px;
+    order: 1;
+}
+
+.position-input[data-position="2"],
+.position-input[data-position="3"],
+.position-input[data-position="4"] {
+    min-height: 120px;
+}
+
+.position-input[data-position="5"],
+.position-input[data-position="6"],
+.position-input[data-position="7"] {
+    min-height: 120px;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .banner-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .position-input[data-position="1"] {
+        flex: 100%;
+        order: 1;
+    }
+
+    .position-input[data-position="2"] {
+        flex: 1 1 calc(33.33% - 0.666em);
+        order: 2;
+    }
+
+    .position-input[data-position="3"] {
+        flex: 1 1 calc(33.33% - 0.666em);
+        order: 3;
+    }
+
+    .position-input[data-position="4"] {
+        flex: 1 1 calc(33.33% - 0.666em);
+        order: 4;
+    }
+
+    .position-input[data-position="5"] {
+        flex: 100%;
+        order: 5;
+    }
+
+    .position-input[data-position="6"] {
+        flex: 100%;
+        order: 6;
+    }
+
+    .position-input[data-position="7"] {
+        flex: 100%;
+        order: 7;
+    }
+
+    #generateButton {
+        width: auto;
+        order: 8;
+    }
+}
+
+/* Button styles */
+#generateButton {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    height: 50px; /* Explicit height for consistency */
+    line-height: 1; /* Align text vertically */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+#generateButton:hover {
+    background-color: #0056b3;
+}
+
+/* Result container styles */
+.result-container {
+    margin-top: 2em;
+    width: 100%;
+    padding: 0 1em;
+    margin-bottom: 2em;
+}
+
+#copyButton {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 1em;
+    height: 50px; /* Match generateButton height */
+    line-height: 1; /* Align text vertically */
+    box-sizing: border-box; /* Ensure padding doesn't affect height */
+}
+
+#copyButton:hover {
+    background-color: #218838;
+}
+
+#resultOutput {
+    background-color: white;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    white-space: pre-wrap;
+    min-height: 150px;
+    overflow-y: auto;
+    max-height: 400px;
+    width: 100%;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
